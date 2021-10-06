@@ -3,7 +3,7 @@
 
 <head>
 
-    <title>APP NAME by Shyann Jobe</title>
+    <title>Taco Cat by Shyann Jobe</title>
 
     <!-- Required meta tags -->
     <meta charset="utf-8">
@@ -37,7 +37,7 @@
         <div class="container-fluid">
             <a class="navbar-brand" href="/index.html">
                 <img src="img/mark-white.png" class="d-inline-block aligin-text-top" height="35"> 
-                APP NAME
+                Taco Cat
             </a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse"
                 aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
@@ -55,10 +55,10 @@
                         <a class="nav-link active" href="/code.html">The Code</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#">The Repo</a>
+                        <a class="nav-link" href="https://github.com/helloshyann/tacocat-challenge" target="_blank">The Repo</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#">Portfolio</a>
+                        <a class="nav-link" href="https://helloshyann.com" target="_blank">Portfolio</a>
                     </li>
                 </ul>
             </div>
@@ -73,31 +73,45 @@
     <!-- Page Content-->
     <section class="py-5">
         <div class="container px-5 my-5">
-            <div class="text-center mb-5">
+            <div class="card text-center p-3">
                 <h1 class="fw-bolder animate__animated animate__bounceIn">View the Code</h1>
-                <p class="lead fw-normal text-muted mb-0">A simple way to view how this program was written.</p>
+                <p class="lead fw-normal text-muted mb-0">A simple way to see how this program was written.</p>
             </div>
+
+            <hr>
             
             <div class="row row-cols-1 gx-5">
-                <!-- Code Accordion 1-->
                 <div class="col col-md-8">                   
-                    <h2 class="fw-bolder mb-3">JavaScript, HTML, & CSS</h2>
+                    <h2 class="fw-bolder mb-3">JavaScript</h2>
                     <div class="accordion mb-5" id="accordionExample">
+                        <!--Code Snippet Item-->
                         <div class="accordion-item">
-                            <h3 class="accordion-header" id="headingOne"><button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">JavaScript</button></h3>
+                            <h3 class="accordion-header" id="headingOne"><button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                                function getUserString()
+                            </button></h3>
                             <div class="accordion-collapse collapse show" id="collapseOne" aria-labelledby="headingOne" data-bs-parent="#accordionExample">
                                 <div class="accordion-body">
                                     
                                     <pre class="line-numbers">
                                         <code class="language-javascript">
-                                            //Get starting values from the DOM
-                                            //Controller function
-                                            function displayMessage(){
-                                                let msg = "";
                                             
-                                                msg = document.getElementById("message").value;
+                                            function getUserString(){
+    
+                                                // Get the user's input
+                                                let userString = document.getElementById("userInput").value;
                                             
-                                                Swal.fire(msg);
+                                                // Reverse the user's input 
+                                                // => go into seperate function
+                                                let revString = reverseString(userString);
+                                            
+                                                // Compare original input and reversed input
+                                                // => go into seperate function
+                                                let compareResult = compareString(userString, revString);
+                                            
+                                                // Output result
+                                                // => go into seperate function
+                                                displayString(userString, revString, compareResult);
+                                            
                                             }
                                             
                                         </code>
@@ -106,21 +120,32 @@
                                 </div>
                             </div>
                         </div>
+                        <!--Code Snippet Item-->
                         <div class="accordion-item">
-                            <h3 class="accordion-header" id="headingTwo"><button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">HTML 5</button></h3>
+                            <h3 class="accordion-header" id="headingTwo"><button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                                function reverseString()
+                            </button></h3>
                             <div class="accordion-collapse collapse" id="collapseTwo" aria-labelledby="headingTwo" data-bs-parent="#accordionExample">
                                 <div class="accordion-body">
                                     
                                     <pre class="line-numbers">
                                         <code class="language-javascript">
-                                            //Get starting values from the DOM
-                                            //Controller function
-                                            function displayMessage(){
-                                                let msg = "";
                                             
-                                                msg = document.getElementById("message").value;
+                                            function reverseString(userString){
+
+                                                // Start at the last index of string array
+                                                let startValue = userString.length - 1;
+                                                let endValue = 0;
+                                                
+                                                let revString = "";
                                             
-                                                Swal.fire(msg);
+                                                // Decremented for loop
+                                                // Start value must be higher than the end value
+                                                for(let i = startValue; i >= endValue; i--){
+                                                    revString += userString[i];
+                                                };
+                                            
+                                                return revString;
                                             }
                                             
                                         </code>
@@ -129,21 +154,75 @@
                                 </div>
                             </div>
                         </div>
+                        <!--Code Snippet Item-->
                         <div class="accordion-item">
-                            <h3 class="accordion-header" id="headingThree"><button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">CSS 3</button></h3>
+                            <h3 class="accordion-header" id="headingThree"><button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                                function compareString()
+                            </button></h3>
                             <div class="accordion-collapse collapse" id="collapseThree" aria-labelledby="headingThree" data-bs-parent="#accordionExample">
                                 <div class="accordion-body">
                                     
                                     <pre class="line-numbers">
                                         <code class="language-javascript">
-                                            //Get starting values from the DOM
-                                            //Controller function
-                                            function displayMessage(){
-                                                let msg = "";
                                             
-                                                msg = document.getElementById("message").value;
+                                            function compareString(userString, revString){
+
+                                                // Set RegEx variable
+                                                let regEx = /[\W_]/g;
                                             
-                                                Swal.fire(msg);
+                                                // Use array function to normalizing casing
+                                                // Use RegEx to remove spaces and special characters
+                                                let modifiedUserString = 
+                                                userString.toLowerCase().replace(regEx, "");
+                                                let modifiedRevString = 
+                                                revString.toLowerCase().replace(regEx, "");
+                                            
+                                                // Set result variables
+                                                let emptyResult = 
+                                                'You must input a word to determine if it is a palindrome.';
+                                                let palindromeResult = 'YES! This is a palindrome!';
+                                                let notPalindromResult = 'Sorry, this is not a palindrome.';
+                                            
+                                                if (modifiedUserString == ""){
+                                                    return emptyResult;
+                                                }
+                                                else if (modifiedUserString == modifiedRevString){
+                                                    return palindromeResult;
+                                                }
+                                                else {
+                                                    return notPalindromResult;
+                                                }
+                                            }
+                                            
+                                        </code>
+                                    </pre>
+
+                                </div>
+                            </div>
+                        </div>
+                        <!--Code Snippet Item-->
+                        <div class="accordion-item">
+                            <h3 class="accordion-header" id="headingFour"><button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFour" aria-expanded="false" aria-controls="collapseFour">
+                                function displayString()
+                            </button></h3>
+                            <div class="accordion-collapse collapse" id="collapseFour" aria-labelledby="headingFour" data-bs-parent="#accordionExample">
+                                <div class="accordion-body">
+                                    
+                                    <pre class="line-numbers">
+                                        <code class="language-javascript">
+                                            
+                                            function displayString(userString, revString, compareResult){
+
+                                                // Locate the IDs in the DOM to display outputs    
+                                                let output1 = document.getElementById("results1");
+                                                let output2 = document.getElementById("results2");
+                                                let output3 = document.getElementById("results3");
+                                            
+                                                // Results of original input, the reversed string,
+                                                // and whether or not input was a palindrome
+                                                output1.innerHTML = userString;
+                                                output2.innerHTML = revString;
+                                                output3.innerHTML = compareResult;
                                             }
                                             
                                         </code>
@@ -154,6 +233,8 @@
                         </div>
                     </div>
                 </div>
+
+                <!--Side Card-->
                 <div class="col col-md-4">
                     <div class="card border-0 bg-light mt-xl-5">
                         <div class="card-body p-4 py-lg-5 code-box">
@@ -163,56 +244,16 @@
                                     <p class="mb-4">
                                         
                                     </p>
-                                    <div class="h6">Contact Me!</div>
+                                    <div class="h4">Contact Me!</div>
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
+
             </div>
         </div>
     </section>
-
-
-        
-            
-        
-            
-        
-
-
-
-
-
-    <!-- Main
-    <main id="content" class="flex-shrink-0">
-       <div class="container mt-3">
-           <h1>The Code</h1>
-           <hr>
-           <div class="row row-cols-1">
-               <div class="col col-lg-8">
-                    <pre class="line-numbers">
-                        <code class="language-javascript">
-                            //Get starting values from the DOM
-                            //Controller function
-                            function displayMessage(){
-                                let msg = "";
-                            
-                                msg = document.getElementById("message").value;
-                            
-                                Swal.fire(msg);
-                            }
-                        </code>
-                    </pre>
-               </div>
-               <div class="col col-lg-4 mt-3">
-                    <p>The code is structured in one function.</p>
-                    <h5>getValues</h5>
-                    <p>Prints out your message!</p>
-               </div>
-           </div>
-       </div>
-    </main> -->
 
     <!--Footer Section -->
     <footer class="footer mt-auto py-3">
@@ -232,10 +273,10 @@
                     <div class="row">
                         
                         <div class="col social">
-                            <a href="#"><i class="fab fa fa-github-square fa-2x"></i></a>
+                            <a href="https://github.com/helloshyann" target="_blank"><i class="fab fa fa-github-square fa-2x"></i></a>
                         </div>
                         <div class="col social">
-                            <a href="#"><i class="fab fa fa-linkedin-square fa-2x"></i></a>
+                            <a href="https://www.linkedin.com/in/helloshyann/" target="_blank"><i class="fab fa fa-linkedin-square fa-2x"></i></a>
                         </div>
 
                     </div>

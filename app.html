@@ -3,7 +3,7 @@
 
 <head>
 
-    <title>APP NAME by Shyann Jobe</title>
+    <title>Taco Cat by Shyann Jobe</title>
 
     <!-- Required meta tags -->
     <meta charset="utf-8">
@@ -35,7 +35,7 @@
         <div class="container-fluid">
             <a class="navbar-brand" href="/index.html">
                 <img src="img/mark-white.png" class="d-inline-block aligin-text-top" height="35"> 
-                APP NAME
+                Taco Cat
             </a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse"
                 aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
@@ -53,10 +53,10 @@
                         <a class="nav-link" href="/code.html">The Code</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#">The Repo</a>
+                        <a class="nav-link" href="https://github.com/helloshyann/tacocat-challenge" target="_blank">The Repo</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#">Portfolio</a>
+                        <a class="nav-link" href="https://helloshyann.com" target="_blank">Portfolio</a>
                     </li>
                 </ul>
             </div>
@@ -71,16 +71,68 @@
     <!-- Page Content-->
     <section class="flex-shrink-0 py-5">
         <div class="container px-5 my-5">
-            <div class="text-center mb-5">
-                <h1 class="fw-bolder animate__animated animate__bounceIn">App UI Goes Here</h1>
-                <p class="lead fw-normal text-muted mb-0">A simple way to view how this program was written.</p>
+
+            <div class="card text-center p-3">
+                <h1 class="fw-bolder animate__animated animate__bounceIn">Check for Palindrome</h1>
+                <p class="lead fw-normal text-muted mb-0">
+                    While there are many ways to solve this challenge, this solution specifically utilizes decremented for loops
+                    to check the values of a string array and evaluate if it is a palindrome.
+                </p>
             </div>
             
-        <hr>
-           <form>
-               <input id="message" type="text" placeholder="Enter a message" required>
-               <button id="btnSubmit" type="button" class="btn">Display</button>
-           </form>
+            <hr>                     
+
+            <div class="d-flex justify-content-center">
+                <form class="row rowl-cols-1 gy-3">
+                    <div class="col">
+                        <input id="userInput" type="text" placeholder="Enter a message" required>
+                    </div>
+                    <div class="col">
+                        <button id="btnSubmit" type="button" class="btn hvr-pulse-grow">Check Palindrome</button>
+                    </div>
+                </form>
+            </div>           
+
+            <hr/>
+                       
+            <div class="row row-cols-1 gy-3 mb-5">
+                <div class="col col-md-4">
+                    <div class="card">
+                        <div class="card-header">
+                            <h4 class="mt-2">Original Input</h4>
+                        </div>
+                        <div class="card-body">
+                            <p id="results1" class="text-dark">
+                                <!--Results Go Here-->
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col col-md-4">
+                    <div class="card">
+                        <div class="card-header">
+                            <h4 class="mt-2">Reversed Output</h4>
+                        </div>
+                        <div class="card-body">
+                            <p id="results2">
+                                <!--Results Go Here-->
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col col-md-4">
+                    <div class="card">
+                        <div class="card-header">
+                            <h4 class="mt-2">Palindrome Status</h4>
+                        </div>
+                        <div class="card-body">
+                            <p id="results3">
+                                <!--Results Go Here-->
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
 
         </div>
     </section>
@@ -90,7 +142,7 @@
     <footer class="footer sticky-footer mt-auto py-3">
         <div class="container-fluid">
             <div class="row row-cols-1 row-cols-lg-3 gy-2">
-                <div class="col d-flex align-items-center justify-content-center justify-content-lg-start order-last order-lg-first">
+                <div class="col d-flex align-items-center justify-content-center justify-content-lg-center order-last order-lg-first">
                     <div>
                         <span class="text-light">&copy; Shyann Jobe | helloshyann@gmail.com</span>
                     </div>
@@ -104,10 +156,10 @@
                     <div class="row">
                         
                         <div class="col social">
-                            <a href="#"><i class="fab fa fa-github-square fa-2x"></i></a>
+                            <a href="https://github.com/helloshyann" target="_blank"><i class="fab fa fa-github-square fa-2x"></i></a>
                         </div>
                         <div class="col social">
-                            <a href="#"><i class="fab fa fa-linkedin-square fa-2x"></i></a>
+                            <a href="https://www.linkedin.com/in/helloshyann/" target="_blank"><i class="fab fa fa-linkedin-square fa-2x"></i></a>
                         </div>
 
                     </div>
@@ -127,7 +179,7 @@
     <!-- Javascript -->
     <script src="js/site.js"></script>
     <script>
-        document.getElementById("btnSubmit").addEventListener("click", displayMessage);
+        document.getElementById("btnSubmit").addEventListener("click", getUserString);
     </script>
 </body>
 

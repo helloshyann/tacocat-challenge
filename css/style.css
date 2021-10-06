@@ -27,8 +27,8 @@ Shadow - #454360 */
 }
 
 :root {
-    --primary-color: #f95779;
-    --secondary-color: #ffb4c4;
+    --primary-color: #44d7b6;
+    --secondary-color: #adeedf;
     --dark-color: #333;
     --white-color: #f9f9ff;
 }
@@ -96,6 +96,16 @@ footer .social>a:hover {
     background-color: var(--primary-color);
 }
 
+.card {
+  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+  transition: 0.3s;
+  border-radius: 5px;
+}
+
+.card-header {
+  background-color: var(--secondary-color);
+}
+
 .techicon {
     color: var(--primary-color) ;
 }
@@ -107,11 +117,16 @@ footer .social>a:hover {
     color: var(--secondary-color);
 }
 
-h1, h2, h3, h4, h5, h6 {
+h1, h2, h4, h5, h6 {
     color: #454360;
     font-family: "lemonmilk", sans-serif !important;
     font-weight: 700;
   }
+
+  h3 {
+    font-family: url('/css/fonts/LouisGeorge.ttf') !important;
+  }
+  
   
 
 .btn {
