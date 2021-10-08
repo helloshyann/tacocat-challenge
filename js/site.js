@@ -3,6 +3,18 @@ function getUserString(){
     // Get the user's input
     let userString = document.getElementById("userInput").value;
 
+    if (userString == ""){
+        Swal.fire({
+            title: "Uh oh!",
+            text: "You must enter a string of characters to determine if it is a palindrome.",
+            icon: "error",
+            confirmButtonText: "OK",
+            confirmButtonColor: "#44d7b6",
+            focusConfirm: false,
+            showCloseButton:true,
+          });;
+    };
+
     // Reverse the user's input => go into seperate function
     let revString = reverseString(userString);
 
@@ -41,7 +53,7 @@ function compareString(userString, revString){
     let modifiedRevString = revString.toLowerCase().replace(regEx, "");
 
     // Set result variable
-    let emptyResult = 'You must input a word to determine if it is a palindrome.';
+    let emptyResult = '';
     let palindromeResult = 'YES! This is a palindrome!';
     let notPalindromResult = 'Sorry, this is not a palindrome.';
 
