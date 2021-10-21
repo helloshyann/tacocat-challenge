@@ -60,8 +60,9 @@ function compareString(userString, revString){
     if (modifiedUserString == ""){
         return emptyResult;
     }
-    else if (modifiedUserString == modifiedRevString){
-        return palindromeResult;
+    else if (modifiedUserString == modifiedRevString){        
+        
+        return palindromeResult;    
     }
     else {
         return notPalindromResult;
@@ -70,6 +71,7 @@ function compareString(userString, revString){
 
 function displayString(userString, revString, compareResult){
 
+    
     // Locate the IDs in the DOM to display outputs    
     let output1 = document.getElementById("results1");
     let output2 = document.getElementById("results2");
@@ -79,4 +81,6 @@ function displayString(userString, revString, compareResult){
     output1.innerHTML = userString;
     output2.innerHTML = revString;
     output3.innerHTML = compareResult;
+
+    
 }
